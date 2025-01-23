@@ -1,0 +1,38 @@
+To Do -
+
+
+Pause Menu 
+
+- Resume
+
+- Settings https://www.youtube.com/watch?v=YOaYQrN1oYQ
+  - Resolution
+  - Fullscreen Mode
+  - Graphics Quality
+  - Volume
+
+- Quit to Main Menu
+
+- Quit to Desktop
+
+
+
+Main Menu
+- Continue
+- New Game
+- Open Settings
+- Quit Game
+
+
+
+Items
+- Pick Up
+- Drop
+- MORE LATER
+
+
+
+Encyclopedia UI
+- Open on Button Press
+
+
