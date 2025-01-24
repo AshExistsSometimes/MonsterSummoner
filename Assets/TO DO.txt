@@ -5,11 +5,11 @@ Pause Menu
 
 - Resume
 
-- Settings https://www.youtube.com/watch?v=YOaYQrN1oYQ
-  - Resolution
-  - Fullscreen Mode
-  - Graphics Quality
-  - Volume
+- Settings x
+  - Resolution x 
+  - Fullscreen Mode x
+  - Graphics Quality x
+  - Volume x
 
 - Quit to Main Menu
 
@@ -17,11 +17,11 @@ Pause Menu
 
 
 
-Main Menu
+Main Menu x
 - Continue
 - New Game
-- Open Settings
-- Quit Game
+- Open Settings x
+- Quit Game x
 
 
 
