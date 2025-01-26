@@ -11,6 +11,9 @@ public class PauseMenu : MonoBehaviour
     public UnityEvent EventPauseGame;
     public UnityEvent EventUnpauseGame;
 
+    [Header("References")]
+    public PlayerCamera PlayerCam;
+
     private void Update()
     {
         PauseMenuToggle();
@@ -20,8 +23,7 @@ public class PauseMenu : MonoBehaviour
     {
         if (isPaused)
         {
-            Cursor.lockState = CursorLockMode.None;
-            Cursor.visible = true;
+            PlayerCam.CursorLocked = false;
 
             if (Input.GetKeyDown(KeyCode.Escape))
             {
@@ -32,8 +34,7 @@ public class PauseMenu : MonoBehaviour
 
         else if (!isPaused)
         {
-            Cursor.lockState = CursorLockMode.Locked;
-            Cursor.visible = false;
+            PlayerCam.CursorLocked = true;
 
             if (Input.GetKeyDown(KeyCode.Escape))
             {

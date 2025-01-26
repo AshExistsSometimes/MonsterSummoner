@@ -951,6 +951,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 1
         m_CallState: 2
+  PlayerCam: {fileID: 963194229}
 --- !u!1 &210427766
 GameObject:
   m_ObjectHideFlags: 0
@@ -1297,7 +1298,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 0, y: -62.6}
-  m_SizeDelta: {x: 350, y: 30}
+  m_SizeDelta: {x: 200, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &377618236
 MonoBehaviour:
@@ -1320,7 +1321,7 @@ MonoBehaviour:
     m_SelectOnRight: {fileID: 0}
   m_Transition: 1
   m_Colors:
-    m_NormalColor: {r: 1, g: 1, b: 1, a: 0}
+    m_NormalColor: {r: 1, g: 1, b: 1, a: 0.12156863}
     m_HighlightedColor: {r: 0, g: 0, b: 0, a: 0.4117647}
     m_PressedColor: {r: 0, g: 0, b: 0, a: 0.62352943}
     m_SelectedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
@@ -18292,7 +18293,7 @@ MonoBehaviour:
     m_SelectOnRight: {fileID: 0}
   m_Transition: 1
   m_Colors:
-    m_NormalColor: {r: 1, g: 1, b: 1, a: 0}
+    m_NormalColor: {r: 1, g: 1, b: 1, a: 0.12156863}
     m_HighlightedColor: {r: 0, g: 0, b: 0, a: 0.34901962}
     m_PressedColor: {r: 0, g: 0, b: 0, a: 0.6313726}
     m_SelectedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
@@ -18700,7 +18701,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 0, y: -17}
-  m_SizeDelta: {x: 350, y: 30}
+  m_SizeDelta: {x: 220, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1596641524
 MonoBehaviour:
@@ -18723,7 +18724,7 @@ MonoBehaviour:
     m_SelectOnRight: {fileID: 0}
   m_Transition: 1
   m_Colors:
-    m_NormalColor: {r: 1, g: 1, b: 1, a: 0}
+    m_NormalColor: {r: 1, g: 1, b: 1, a: 0.12156863}
     m_HighlightedColor: {r: 0, g: 0, b: 0, a: 0.4117647}
     m_PressedColor: {r: 0, g: 0, b: 0, a: 0.62352943}
     m_SelectedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
@@ -19874,7 +19875,7 @@ MonoBehaviour:
     m_SelectOnRight: {fileID: 0}
   m_Transition: 1
   m_Colors:
-    m_NormalColor: {r: 1, g: 1, b: 1, a: 0}
+    m_NormalColor: {r: 1, g: 1, b: 1, a: 0.12156863}
     m_HighlightedColor: {r: 0, g: 0, b: 0, a: 0.4117647}
     m_PressedColor: {r: 0, g: 0, b: 0, a: 0.62352943}
     m_SelectedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
