@@ -8,15 +8,23 @@ public class PauseMenu : MonoBehaviour
 {
     public bool isPaused = false;
 
-    public UnityEvent EventPauseGame;
-    public UnityEvent EventUnpauseGame;
+    public UnityEvent OpenPauseMenu;
+    public UnityEvent ClosePauseMenu;
+
+    public UnityEvent WhenSomethingPausesGame;
 
     [Header("References")]
     public PlayerCamera PlayerCam;
 
+
+
     private void Update()
     {
         PauseMenuToggle();
+        if(!isPaused)
+        {
+            Time.timeScale = 1.0f;
+        }
     }
 
     private void PauseMenuToggle()
@@ -28,7 +36,7 @@ public class PauseMenu : MonoBehaviour
             if (Input.GetKeyDown(KeyCode.Escape))
             {
                 isPaused = false;
-                UnPauseGame();
+                ResumeGame();
             }
         }
 
@@ -39,21 +47,28 @@ public class PauseMenu : MonoBehaviour
             if (Input.GetKeyDown(KeyCode.Escape))
             {
                 isPaused = true;
-                PauseGame();
+                PauseMenuOpen();
             }
         }
     }
 
-    public void PauseGame()
+    public void GeneralPauseGame()
     {
+        isPaused = true;
+        WhenSomethingPausesGame.Invoke();
         Time.timeScale = 0f;
-        EventPauseGame.Invoke();
     }
 
-    public void UnPauseGame()
+    public void PauseMenuOpen()
+    {
+        Time.timeScale = 0f;
+        OpenPauseMenu.Invoke();
+    }
+
+    public void ResumeGame()
     {
         Time.timeScale = 1f;
-        EventUnpauseGame.Invoke();
+        ClosePauseMenu.Invoke();
     }
 
 

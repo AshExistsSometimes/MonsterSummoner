@@ -46,12 +46,10 @@ public class PlayerCamera : MonoBehaviour
         if (CursorLocked)
         {
             Cursor.lockState = CursorLockMode.Locked;
-            Cursor.visible = false;
         }
         else
         {
             Cursor.lockState = CursorLockMode.None;
-            Cursor.visible = true;
         }
     }
 }

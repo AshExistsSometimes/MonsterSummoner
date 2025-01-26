@@ -7,7 +7,8 @@ public class MainMenu : MonoBehaviour
 {
     public void PlayGame()// needs to be replaced with functionality to load a saved game, and a seperate function to start a new save
     {
-        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+        SceneManager.LoadSceneAsync(1);
+        SceneManager.UnloadScene(0);
     }
 
     public void QuitGame()

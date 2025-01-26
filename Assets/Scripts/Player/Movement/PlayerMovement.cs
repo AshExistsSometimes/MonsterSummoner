@@ -31,6 +31,9 @@ public class PlayerMovement : MonoBehaviour
 
     public bool canMove = true;
 
+    [HideInInspector]
+    public bool playerIsMoving = false;
+
 
     /////////////////////////////////////////////////////
 
@@ -49,6 +52,7 @@ public class PlayerMovement : MonoBehaviour
 
         GroundedDragCalc();
 
+        IsPlayerMoving();// Checks if player is moving in case entity needs that info
     }
 
     
@@ -98,6 +102,19 @@ public class PlayerMovement : MonoBehaviour
         {
             Vector3 limitedVelocity = flatVelocity.normalized * moveSpeed;
             rb.velocity = new Vector3(limitedVelocity.x, rb.velocity.y, limitedVelocity.z);
+        }
+    }
+
+    private void IsPlayerMoving()
+    {
+        float inputMagnitude = new Vector3(Input.GetAxis("Horizontal"), 0, Input.GetAxis("Vertical")).magnitude;
+        if (inputMagnitude > 0)
+        {
+            playerIsMoving = true;
+        }
+        else
+        {
+            playerIsMoving = false;
         }
     }
 }
