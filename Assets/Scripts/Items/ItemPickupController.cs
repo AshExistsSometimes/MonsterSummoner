@@ -104,6 +104,7 @@ public class ItemPickupController : MonoBehaviour, IInteractable
         rb.isKinematic = true;
         rb.useGravity = false;
         collider.enabled = false;
+        rb.interpolation = RigidbodyInterpolation.None;
 
         // Enable Item Script
         itemScript.enabled = true;
@@ -117,6 +118,7 @@ public class ItemPickupController : MonoBehaviour, IInteractable
         // Remove Item from Socket
         transform.SetParent(null);
 
+        rb.interpolation = RigidbodyInterpolation.Interpolate;
         rb.isKinematic = false;
         rb.useGravity = true;
         collider.enabled = true;
