@@ -34,6 +34,9 @@ public class PlayerMovement : MonoBehaviour
     [HideInInspector]
     public bool playerIsMoving = false;
 
+    
+    public bool isHoldingItem = false;
+
 
     /////////////////////////////////////////////////////
 

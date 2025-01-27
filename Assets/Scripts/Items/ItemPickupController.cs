@@ -8,10 +8,12 @@ public class ItemPickupController : MonoBehaviour, IInteractable
     [Header("References")]
     public HoldableItem itemScript;
     public Rigidbody rb;
-    public BoxCollider collider;
+    public Collider collider;
     public Transform Player, Socket, PlayerCam;
     public Outline outline;
     public float outlineWidth = 10f;
+
+    public PlayerMovement player;
 
     [Header("Values")]
     public float pickUpRange;
@@ -25,7 +27,7 @@ public class ItemPickupController : MonoBehaviour, IInteractable
     private void Start()
     {
         Rigidbody rb = GetComponent<Rigidbody>();
-        BoxCollider collider = rb.GetComponent<BoxCollider>();
+        Collider collider = rb.GetComponent<Collider>();
 
         if (!equipped)
         {
@@ -106,6 +108,9 @@ public class ItemPickupController : MonoBehaviour, IInteractable
         collider.enabled = false;
         rb.interpolation = RigidbodyInterpolation.None;
 
+        // Tells player it's holding something
+        player.isHoldingItem = true;
+
         // Enable Item Script
         itemScript.enabled = true;
     }
@@ -123,6 +128,9 @@ public class ItemPickupController : MonoBehaviour, IInteractable
         rb.useGravity = true;
         collider.enabled = true;
         collider.isTrigger = false;
+
+        // tells player it isnt holding anything anymore
+        player.isHoldingItem = false;
 
         // Item carries momentum of player
         rb.velocity = Player.GetComponent<Rigidbody>().velocity;
