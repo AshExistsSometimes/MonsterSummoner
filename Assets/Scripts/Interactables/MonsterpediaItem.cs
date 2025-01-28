@@ -16,6 +16,7 @@ public class MonsterpediaItem : MonoBehaviour, IInteractable
     public UnityEvent OnExitMonsterpedia;
 
     private bool MonsterpediaOpen = false;
+    private bool playerLookingAtMe = false;
     public void Interact()
     {
         OnInteract.Invoke();
@@ -25,12 +26,14 @@ public class MonsterpediaItem : MonoBehaviour, IInteractable
 
     public void OnSelect()
     {
-        outline.OutlineWidth = outlineWidth;
+        outline.enabled = true;
+        playerLookingAtMe = true;
     }
 
     public void OnDeselect()
     {
-        outline.OutlineWidth = 0;
+        outline.enabled = false;
+        playerLookingAtMe = false;
     }
 
 
@@ -42,6 +45,11 @@ public class MonsterpediaItem : MonoBehaviour, IInteractable
             OnExitMonsterpedia.Invoke();
             Time.timeScale = 1.0f;
             MonsterpediaOpen = false;
+        }
+
+        if (!playerLookingAtMe)
+        {
+            outline.enabled = false;
         }
     }
 }

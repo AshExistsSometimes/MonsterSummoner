@@ -16,11 +16,13 @@ public class ItemPickupController : MonoBehaviour, IInteractable
     public PlayerMovement player;
 
     [Header("Values")]
-    public float pickUpRange;
     public float dropForwardForce, dropUpwardForce;
     [Space]
     public bool equipped;
     public static bool handsFull;
+
+
+    private bool playerLookingAtMe = false;
 
     //////////////
 
@@ -55,16 +57,21 @@ public class ItemPickupController : MonoBehaviour, IInteractable
     public void OnSelect()
     {
         outline.OutlineWidth = outlineWidth;
+        outline.enabled = true;
+        playerLookingAtMe = true;
     }
 
     public void OnDeselect()
     {
-        outline.OutlineWidth = 0;
+        outline.enabled = false;
+        playerLookingAtMe = false;
     }
 
     private void Update()
     {
-        if(equipped)
+        if (!playerLookingAtMe)  {outline.enabled = false;}
+
+        if (equipped)
         {
             rb.isKinematic = true;
             rb.useGravity = false;
@@ -79,15 +86,6 @@ public class ItemPickupController : MonoBehaviour, IInteractable
         if (equipped && Input.GetKeyDown(KeyCode.Q))
         {
             DropHeldItem();
-        }
-
-        if (distanceToPlayer.magnitude <= pickUpRange)
-        {
-            outline.enabled = true;
-        }
-        else
-        {
-            outline.enabled = false;
         }
     }
 

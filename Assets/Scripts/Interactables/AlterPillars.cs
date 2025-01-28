@@ -18,9 +18,12 @@ public class AlterPillars : MonoBehaviour, IInteractable
     public bool PlayerHasItem = false;
 
     private bool PillarHasItem = false;
+    private bool playerLookingAtMe = false;
 
     private void Update()
     {
+        if (!playerLookingAtMe) { outline.enabled = false; }
+
         if (player.isHoldingItem)
         {
             PlayerHasItem = true;
@@ -44,12 +47,14 @@ public class AlterPillars : MonoBehaviour, IInteractable
     {
         if (PlayerHasItem)
         {
-            outline.OutlineWidth = outlineThickness;
+            outline.enabled = true;
+            playerLookingAtMe = true;
         }
     }
 
     public void OnDeselect()
     {
-        outline.OutlineWidth = 0;
+        outline.enabled = false;
+        playerLookingAtMe = false;
     }
 }
