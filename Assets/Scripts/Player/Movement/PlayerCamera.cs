@@ -52,4 +52,10 @@ public class PlayerCamera : MonoBehaviour
             Cursor.lockState = CursorLockMode.None;
         }
     }
+
+    public void SetSensitivity(float sensitivity)
+    {
+        XSensitivity = sensitivity;
+        YSensitivity = sensitivity;
+    }
 }
